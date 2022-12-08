@@ -1,8 +1,8 @@
 package krestiki;
 
-//Класс Игрока - просто наследует класс Gamer
+//РљР»Р°СЃСЃ РРіСЂРѕРєР° - РїСЂРѕСЃС‚Рѕ РЅР°СЃР»РµРґСѓРµС‚ РєР»Р°СЃСЃ Gamer
 public class Player extends Gamer {
-    //Конструктор, как у класса Gamer
+    //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ, РєР°Рє Сѓ РєР»Р°СЃСЃР° Gamer
     public Player(String gamerSign, String gamerName) {
         super(gamerSign, gamerName);
     }

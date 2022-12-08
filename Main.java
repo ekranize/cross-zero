@@ -1,10 +1,10 @@
 package krestiki;
 
 public class Main {
-    //Константа - размер поля
+    //РљРѕРЅСЃС‚Р°РЅС‚Р° - СЂР°Р·РјРµСЂ РїРѕР»СЏ
     public static final byte fieldSize = 3;
     public static void main(String[] args) {
-        //Начать игру на поле заданного размера
+        //РќР°С‡Р°С‚СЊ РёРіСЂСѓ РЅР° РїРѕР»Рµ Р·Р°РґР°РЅРЅРѕРіРѕ СЂР°Р·РјРµСЂР°
         new Game().play(fieldSize);
     }
 }

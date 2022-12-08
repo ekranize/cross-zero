@@ -1,25 +1,25 @@
 package krestiki;
-//Абстрактный класс - игрок в целом - родитель Игрока и Компьютера
+//РђР±СЃС‚СЂР°РєС‚РЅС‹Р№ РєР»Р°СЃСЃ - РёРіСЂРѕРє РІ С†РµР»РѕРј - СЂРѕРґРёС‚РµР»СЊ РРіСЂРѕРєР° Рё РљРѕРјРїСЊСЋС‚РµСЂР°
 public abstract class Gamer {
-    //Значок и имя игрока
+    //Р—РЅР°С‡РѕРє Рё РёРјСЏ РёРіСЂРѕРєР°
     private String gamerSign;
     private String gamerName;
-    //Конструктор - на входе Значок и имя
+    //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ - РЅР° РІС…РѕРґРµ Р—РЅР°С‡РѕРє Рё РёРјСЏ
     public Gamer (String gamerSign, String gamerName) {
         this.gamerSign = gamerSign;
         this.gamerName = gamerName;
     }
-    //Геттер Значка
+    //Р“РµС‚С‚РµСЂ Р—РЅР°С‡РєР°
     public String getGamerSign() {
         return gamerSign;
     }
-    //Геттер Имени
+    //Р“РµС‚С‚РµСЂ РРјРµРЅРё
     public String getGamerName() {
         return gamerName;
     }
-    //Метод - игрок делает ход. На входе координаты ячейки и поле
+    //РњРµС‚РѕРґ - РёРіСЂРѕРє РґРµР»Р°РµС‚ С…РѕРґ. РќР° РІС…РѕРґРµ РєРѕРѕСЂРґРёРЅР°С‚С‹ СЏС‡РµР№РєРё Рё РїРѕР»Рµ
     public void doTurn(byte turn0, byte turn1, BattleField battleField) {
-        //Вызываем метод поля для установки значения ячейки
+        //Р’С‹Р·С‹РІР°РµРј РјРµС‚РѕРґ РїРѕР»СЏ РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё Р·РЅР°С‡РµРЅРёСЏ СЏС‡РµР№РєРё
         battleField.setCondition(turn0, turn1, getGamerSign());
     }
 

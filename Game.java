@@ -1,13 +1,13 @@
 package krestiki;
-//Вспомогательный класс - "Игра"
+//Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Р№ РєР»Р°СЃСЃ - "РРіСЂР°"
 public class Game {
     public void play(byte fieldSize) {
-        //Создание нового поля
+        //РЎРѕР·РґР°РЅРёРµ РЅРѕРІРѕРіРѕ РїРѕР»СЏ
         BattleField battleField = new BattleField(fieldSize);
-        //Создание игроков
-        Player player = new Player("X", "Игрок");
-        Computer computer = new Computer("0", "Компьютер");
-        //начало графической игры с заданными параметрами
+        //РЎРѕР·РґР°РЅРёРµ РёРіСЂРѕРєРѕРІ
+        Player player = new Player("X", "РРіСЂРѕРє");
+        Computer computer = new Computer("0", "РљРѕРјРїСЊСЋС‚РµСЂ");
+        //РЅР°С‡Р°Р»Рѕ РіСЂР°С„РёС‡РµСЃРєРѕР№ РёРіСЂС‹ СЃ Р·Р°РґР°РЅРЅС‹РјРё РїР°СЂР°РјРµС‚СЂР°РјРё
         new Gui().go(battleField, player, computer);
     }
 }

@@ -1,21 +1,21 @@
 package krestiki;
 import java.util.HashSet;
-//Класс - игровое поле
+//РљР»Р°СЃСЃ - РёРіСЂРѕРІРѕРµ РїРѕР»Рµ
 public class BattleField {
-    //Размерность игрового поля
+    //Р Р°Р·РјРµСЂРЅРѕСЃС‚СЊ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
     private byte fieldSize;
-    //Двумерный массив состояния игрового поля
+    //Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ СЃРѕСЃС‚РѕСЏРЅРёСЏ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
     private String[][] condition;
-    //Состояние заполненности поля - количество занятых ячеек
+    //РЎРѕСЃС‚РѕСЏРЅРёРµ Р·Р°РїРѕР»РЅРµРЅРЅРѕСЃС‚Рё РїРѕР»СЏ - РєРѕР»РёС‡РµСЃС‚РІРѕ Р·Р°РЅСЏС‚С‹С… СЏС‡РµРµРє
     private byte isFull = 0;
-    //Конструктор. На входе - размерность
-    //Инициализация массива состояния пустыми ("-") ячейками
+    //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ. РќР° РІС…РѕРґРµ - СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ
+    //РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РјР°СЃСЃРёРІР° СЃРѕСЃС‚РѕСЏРЅРёСЏ РїСѓСЃС‚С‹РјРё ("-") СЏС‡РµР№РєР°РјРё
     public BattleField (byte fieldSize) {
         this.fieldSize = fieldSize;
         this.condition = new String[fieldSize][fieldSize];
         this.clearBattleField();
     }
-    //метод для очистки поля для переигровки
+    //РјРµС‚РѕРґ РґР»СЏ РѕС‡РёСЃС‚РєРё РїРѕР»СЏ РґР»СЏ РїРµСЂРµРёРіСЂРѕРІРєРё
     public void clearBattleField () {
         for (int i = 0; i < this.fieldSize; i++) {
             for (int j = 0; j < this.fieldSize; j++) {
@@ -24,7 +24,7 @@ public class BattleField {
         }
         this.isFull = 0;
     }
-    //Геттеры
+    //Р“РµС‚С‚РµСЂС‹
     public byte getFieldSize() {
         return fieldSize;
     }
@@ -35,7 +35,7 @@ public class BattleField {
     public String[][] getCondition() {
         return condition;
     }
-    //Метод для вывода состояния поля
+    //РњРµС‚РѕРґ РґР»СЏ РІС‹РІРѕРґР° СЃРѕСЃС‚РѕСЏРЅРёСЏ РїРѕР»СЏ
     public void printCondition() {
         for (int i = 0; i < this.fieldSize; i++) {
             for (int j = 0; j < this.fieldSize; j++) {
@@ -45,9 +45,9 @@ public class BattleField {
         }
         System.out.println();
     }
-    //Метод для проверки победителя в текщем состоянии поля
+    //РњРµС‚РѕРґ РґР»СЏ РїСЂРѕРІРµСЂРєРё РїРѕР±РµРґРёС‚РµР»СЏ РІ С‚РµРєС‰РµРј СЃРѕСЃС‚РѕСЏРЅРёРё РїРѕР»СЏ
     public String checkWinnerSign() {
-        //4 ХэшСета - построчный, постобцовый, 2 подиагональных
+        //4 РҐСЌС€РЎРµС‚Р° - РїРѕСЃС‚СЂРѕС‡РЅС‹Р№, РїРѕСЃС‚РѕР±С†РѕРІС‹Р№, 2 РїРѕРґРёР°РіРѕРЅР°Р»СЊРЅС‹С…
         HashSet<String> winCounterHorizontal = new HashSet<>();
         HashSet<String> winCounterVertical = new HashSet<>();
         HashSet<String> winCounterDiag1 = new HashSet<>();
@@ -59,8 +59,8 @@ public class BattleField {
                 winCounterHorizontal.add(condition[i][j]);
                 winCounterVertical.add(condition[j][i]);
             }
-            //Если все ячейки в строке/стобце были одинаковыми ("свернулись" в один элемент),
-            //вернуть этого победителя
+            //Р•СЃР»Рё РІСЃРµ СЏС‡РµР№РєРё РІ СЃС‚СЂРѕРєРµ/СЃС‚РѕР±С†Рµ Р±С‹Р»Рё РѕРґРёРЅР°РєРѕРІС‹РјРё ("СЃРІРµСЂРЅСѓР»РёСЃСЊ" РІ РѕРґРёРЅ СЌР»РµРјРµРЅС‚),
+            //РІРµСЂРЅСѓС‚СЊ СЌС‚РѕРіРѕ РїРѕР±РµРґРёС‚РµР»СЏ
             if ((winCounterHorizontal.size() == 1) && (!winCounterHorizontal.contains("-"))) {
                 return winCounterHorizontal.toString();
             }
@@ -72,19 +72,19 @@ public class BattleField {
             winCounterDiag1.add(condition[i][i]);
             winCounterDiag2.add(condition[i][fieldSize - i - 1]);
         }
-        //Если все ячейки в одной из диагоналей были одинаковыми ("свернулись" в один элемент),
-        //вернуть этого победителя
+        //Р•СЃР»Рё РІСЃРµ СЏС‡РµР№РєРё РІ РѕРґРЅРѕР№ РёР· РґРёР°РіРѕРЅР°Р»РµР№ Р±С‹Р»Рё РѕРґРёРЅР°РєРѕРІС‹РјРё ("СЃРІРµСЂРЅСѓР»РёСЃСЊ" РІ РѕРґРёРЅ СЌР»РµРјРµРЅС‚),
+        //РІРµСЂРЅСѓС‚СЊ СЌС‚РѕРіРѕ РїРѕР±РµРґРёС‚РµР»СЏ
         if ((winCounterDiag1.size() == 1) && (!winCounterDiag1.contains("-"))) {
             return winCounterDiag1.toString();
         }
         if ((winCounterDiag2.size() == 1) && (!winCounterDiag2.contains("-"))) {
             return winCounterDiag2.toString();
         }
-        //Если нет победителя
-        return "Пусто";
+        //Р•СЃР»Рё РЅРµС‚ РїРѕР±РµРґРёС‚РµР»СЏ
+        return "РџСѓСЃС‚Рѕ";
     }
-    //Метод для установки значения ячейки в зависимости от игрока, который сделал ход
-    //Сигнатура - "Х", "0" или "-" - "игрок", "компьютер" или "убрать ход" соответственно
+    //РњРµС‚РѕРґ РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё Р·РЅР°С‡РµРЅРёСЏ СЏС‡РµР№РєРё РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ РёРіСЂРѕРєР°, РєРѕС‚РѕСЂС‹Р№ СЃРґРµР»Р°Р» С…РѕРґ
+    //РЎРёРіРЅР°С‚СѓСЂР° - "РҐ", "0" РёР»Рё "-" - "РёРіСЂРѕРє", "РєРѕРјРїСЊСЋС‚РµСЂ" РёР»Рё "СѓР±СЂР°С‚СЊ С…РѕРґ" СЃРѕРѕС‚РІРµС‚СЃС‚РІРµРЅРЅРѕ
     public void setCondition(byte cell1, byte cell2, String signature) {
         this.condition[cell1][cell2] = signature;
         if (signature.equals("-")) isFull--; else isFull++;
