@@ -1,5 +1,3 @@
-package krestiki;
-
 public class Main {
     //Константа - размер поля
     public static final byte fieldSize = 3;

@@ -1,4 +1,3 @@
-package krestiki;
 //Абстрактный класс - игрок в целом - родитель Игрока и Компьютера
 public abstract class Gamer {
     //Значок и имя игрока

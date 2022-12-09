@@ -1,5 +1,3 @@
-package krestiki;
-
 //Класс Компьютерного игрока - наследует класс Gamer
 public class Computer extends Gamer {
     //Конструктор, как у класса Gamer

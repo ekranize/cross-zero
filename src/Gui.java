@@ -1,5 +1,3 @@
-package krestiki;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -98,8 +96,6 @@ public class Gui {
         }
         //метод для проверки факта выигрыша
         private boolean checkWinner () {
-            battleField.printCondition();
-            System.out.println(battleField.checkWinnerSign());
             //спрашиваем у Поля об этом
             if (battleField.checkWinnerSign().equals("[X]") || battleField.checkWinnerSign().equals("[0]")) {
                 //Если кто-то выиграл сообщаем об этом в заголовке окна

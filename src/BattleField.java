@@ -1,4 +1,3 @@
-package krestiki;
 import java.util.HashSet;
 //Класс - игровое поле
 public class BattleField {

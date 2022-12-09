@@ -1,4 +1,3 @@
-package krestiki;
 //Вспомогательный класс - "Игра"
 public class Game {
     public void play(byte fieldSize) {
